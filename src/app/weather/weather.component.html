@@ -1,0 +1,23 @@
+<br><br>
+<button (click)="a=!a" class="btn btn-outline-info" style="padding: 14px 80px;">Current Weather</button>
+<br><br>
+
+<div class="container" [hidden]="!a" >
+    <h2>Tunis</h2>
+    <div class="card" style="width:400px">
+        <img [src]="imgUrl" class="rounded mx-auto d-block" alt="" class="card-img-top" style="width:50%">
+      <div class="card-body">
+        <h4 class="card-title">{{currentWeather["weather"][0]["description"].charAt(0).toUpperCase()+currentWeather["weather"][0]["description"].slice(1)}}</h4>
+        <hr>
+        <button (click)="b=!b" class="btn btn-primary">See Details </button><br><br>
+   <div [hidden]="!b">
+        <i style="color:dodgerblue"><u><strong> Temperature </strong></u>: from  {{currentWeather["main"]["temp_min"]}} to {{currentWeather["main"]["temp_max"]}}</i><br>
+        <i style="color:dodgerblue"><u><strong> Humidité </strong></u>:  {{currentWeather["main"]["humidity"]}}% </i><br>
+        <i style="color:dodgerblue"><u><strong> Clouds </strong></u>:  {{currentWeather["clouds"]["all"]}} %</i>
+       
+        
+    </div>
+    </div>
+    </div>
+    <br>
+

@@ -1,0 +1,29 @@
+<h1>Contacts</h1>
+
+<button (click)="setPerson()" class="btn btn-primary">Show person</button>
+
+<button (click)="exploreServices()">Click me</button>
+
+<h1>List of users : </h1>
+
+    
+<h1>Post request</h1>
+<input
+  (keyup.enter)="postService(title)" #title
+ type="text" class="form-control">
+
+
+    <ul class="list-group" *ngIf="users"> 
+    <li *ngFor="let user of users.data" class="list-group-item">
+        <img [src]="user.avatar" class="rounded mx-auto d-block">
+        <p>{{user.first_name}}</p>
+    </li>
+</ul>
+
+    <ul class="list-group" *ngIf="boot">
+    <li *ngFor="let user of boot" class="list-group-item">
+      <p>{{user.name}}</p>
+    </li>
+</ul>
+
+<!--    <button (click)="postService()" class="btn btn-primary">Post</button>-->    

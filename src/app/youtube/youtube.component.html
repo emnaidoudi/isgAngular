@@ -1,0 +1,27 @@
+<br><br>
+
+
+<button (click)="getCustomers()" class="btn btn-primary">Show customers</button>
+<br><hr>
+
+<table class="table table-dark" *ngIf="customers">
+  <thead>
+    <tr>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Addresse</th>
+      <th scope="col">Login</th>
+      <th scope="col">Fonction</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of customers">
+    <tr>
+       <th>{{user.firstName}}</th>
+       <th>{{user.lastName}}</th>
+       <th>{{user.Addresse}}</th>
+       <th>{{user.login}}</th>
+      <th>{{user.fonction}}</th>
+    </tr>
+    
+  </tbody>
+</table>
